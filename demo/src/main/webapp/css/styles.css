@@ -1,0 +1,290 @@
+/* ==== Universal Styles ==== */
+
+body {
+    font-family: "Roboto Slab", serif;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header .logo-container {
+    flex-grow: 4;  /* Push nav to the right-hand side on larger devices */
+    align-self: center;
+    padding: 1rem 2.5%;
+}
+
+header .logo-container img {
+    width: 150px;
+}
+
+header nav {
+    flex-grow: 1;
+    padding-right: 5%;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header nav li {
+    height: 100%;
+    font-size: 1.25em;
+}
+
+header nav a {
+    display: inline-block;
+    height: 100%;
+    padding: 1.5rem 0.75em;
+    border-bottom: 4px solid transparent;  /* Prevent nav height increase on hover */
+    border-top: 4px solid transparent;  /* For vertical centring */
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: rgb(240, 240, 240);
+    border-bottom: 4px solid maroon;
+    color: maroon;
+}
+
+header nav a:active {
+    border-bottom: 4px solid black;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    header .logo-container img {
+        margin: 0 auto;  /* Centre logo */
+    }
+
+    header nav {
+        width: 100%;  /* Display full-width nav beneath logo */
+        padding-right: 0;
+    }
+
+    header nav li {
+        height: auto; /* Ensure appropriate height if links wrap */
+        font-size: 1.1em;
+    }
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3em;
+    padding: 2em 2.5%;
+    background-color: rgb(50, 50, 50);
+    color: whitesmoke;
+    font-size: 1.1em;
+}
+
+footer p {
+    padding: 0.6em 1.25em;
+}
+
+@media screen and (max-width: 768px) {
+    footer p {
+        margin: 0 auto;
+    }
+}
+
+
+/* ==== Utilities ==== */
+
+.light-link {
+    color: whitesmoke;
+}
+
+.light-link:hover {
+    text-decoration: none;
+}
+
+.light-link:active {
+    color: rgb(220, 220, 220);
+}
+
+
+/* ==== Components ==== */
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 50%;
+    padding: 2rem 3rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: whitesmoke;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+}
+
+.hero-content p {
+    font-size: 1.6em;
+    line-height: 1.8;
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-content {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-container {
+        min-height: 0; /* Semi-transparent background covers entire image height */
+    }
+
+    .hero-content {
+        width: 100%;  /* Semi-transparent background covers entire image width */
+        max-width: 100%;
+        padding: 7rem 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 3em 10%;
+    text-align: center;
+}
+
+.tiles h2 {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.tile {
+    min-height: 15em;
+    min-width: 300px;
+    width: 25%;
+    margin: 1.5em 2em;
+}
+
+@media screen and (max-width: 1400px) {
+    .tiles {
+        padding: 2.5em 2.5%;
+    }
+
+    .tile {
+        flex-grow: 1;
+        min-width: 250px;
+    }
+}
+
+.img-tiles {
+    padding: 3em 7.5%;
+}
+
+.img-tile {
+    min-width: 250px;
+    width: 280px;
+    border: 2px solid rgb(210, 210, 210);
+}
+
+.img-tile img {
+    border-bottom: 3px solid maroon;
+}
+
+.img-tile-text {
+    padding: 1.5em;
+}
+
+.img-tile h3 {
+    margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 1400px) {
+    .img-tiles {
+        padding: 2.5em 2.5%;
+    }
+
+    .img-tile {
+        flex-grow: 0; /* Prevent whitespace between fixed-width images and tile container */
+    }
+}
+
+.nav-tiles {
+    background-color: rgb(250, 250, 250);
+}
+
+.nav-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 1.5em;
+    background-color: rgb(238, 235, 235);
+    box-shadow: 8px 8px 8px rgb(185, 180, 180);
+    color: black;
+}
+
+.nav-tile a {
+    align-self: center;  /* Prevent button (border) stretching horizontally */
+    margin-top: 2em;
+    padding: 0.8em;
+    border: 3px solid maroon;
+    color: maroon;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-tile a:hover {
+    background-color: white;
+}
+
+.nav-tile a:active {
+    border: 3px solid black;
+    color: black;
+}
+
+
+/* ==== Elements ==== */
+
+h1 {
+    margin-bottom: 0.8em;
+    font-weight: 900;
+}
+
+h2 {
+    margin-bottom: 1em;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+h3 {
+    margin-bottom: 1em;
+}
+
+
+/* ==== Miscellaneous ==== */
+
+#mission {
+    background-image: url("../images/hero-background.jpg");
+}
